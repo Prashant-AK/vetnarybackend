@@ -10,9 +10,9 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 // DB connection
-// var MONGODB_URL = process.env.MONGODB_URL;
+
 var mongoose = require("mongoose");
-// MONGODB_URL = "mongodb://dev_user:xp-2021@3.97.40.116:27017/empodb_dev";
+
 MONGODB_URL = "mongodb+srv://IndVet:ariscell@cluster0.pd62f.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 mongoose
   .connect(MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -65,13 +65,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-// app.use((err, req, res, next) => {
-//   if (err.name == "UnauthorizedError") {
-//     return apiResponse.unauthorizedResponse(
-//       res,
-//       err.message,
-//       "Unauthorized User"
-//     );
-//   }
-// });
+
 module.exports = app;
